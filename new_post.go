@@ -46,7 +46,7 @@ func (a *apiImpl) NewPost(r *http.Request, req *NewPostReq, resp *NewPostResp) e
 	}
 
 	fileName := time.Now().Format("2006-01-02") + "-" + sanitizeFileName(req.Content.Title) + ".htm"
-	fp := filepath.Join(getConfig().HugoRootDir, "content/article", fileName)
+	fp := filepath.Join(getConfig().BlogDir, fileName)
 	file, err := os.Create(fp)
 	if err != nil {
 		fmt.Println(err)

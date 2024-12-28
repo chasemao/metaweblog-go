@@ -10,11 +10,13 @@ import (
 var c config
 
 type config struct {
-	BlogURL     string `yaml:"blogURL"`
-	BlogTitle   string `yaml:"blogTitle"`
-	HugoRootDir string `yaml:"hugoRootDir"`
-	UserName    string `yaml:"userName"`
-	Password    string `yaml:"password"`
+	BlogURL                string `yaml:"blogURL"`
+	BlogTitle              string `yaml:"blogTitle"`
+	BlogDir                string `yaml:"blogDir"`
+	MediaDir               string `yaml:"mediaDir"`
+	MediaRelDirForBlogHtml string `yaml:"mediaRelDirForBlogHtml"`
+	UserName               string `yaml:"userName"`
+	Password               string `yaml:"password"`
 }
 
 func initConfig() error {

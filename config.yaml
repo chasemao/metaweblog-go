@@ -1,6 +1,7 @@
 blogURL: https://chasemao.com
 blogTitle: Chase Mao's blog
-hugoRootDir: ../hugoblog/
-contentDir: ../hugoblog/content/article/
+blogDir: ../hugoblog/content/article/
+mediaDir: ../hugoblog/static/media/
+mediaRelDirForBlogHtml: /media/
 userName: xxx
 password: yyy

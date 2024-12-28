@@ -43,7 +43,7 @@ func (a *apiImpl) NewMediaObject(r *http.Request, req *NewMediaObjectReq, resp *
 	}
 
 	fileName := fmt.Sprintf("%d", time.Now().UnixMilli()) + "-" + req.Media.Name
-	fp := filepath.Join(getConfig().HugoRootDir, "static/media", fileName)
+	fp := filepath.Join(getConfig().MediaDir, fileName)
 	file, err := os.Create(fp)
 	if err != nil {
 		log.Println(err)
@@ -60,7 +60,7 @@ func (a *apiImpl) NewMediaObject(r *http.Request, req *NewMediaObjectReq, resp *
 	resp.MediaResp = MediaResp{
 		ID:       "xxx",
 		FileName: fileName,
-		URL:      "/media/" + fileName,
+		URL:      filepath.Join(getConfig().MediaRelDirForBlogHtml, fileName),
 		Type:     req.Media.Type,
 	}
 
