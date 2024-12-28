@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"log"
 	"net/http"
 
@@ -28,8 +27,6 @@ func main() {
 
 	http.Handle("/metaweblog", newSvrWrapper(svr))
 
-	log.Println(
-		fmt.Sprintf("Starting XML-RPC server on %s/metaweblog", *addr),
-	)
+	log.Printf("Starting XML-RPC server on %s/metaweblog", *addr)
 	log.Fatal(http.ListenAndServe(*addr, nil))
 }

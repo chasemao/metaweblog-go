@@ -3,9 +3,8 @@ package main
 import "errors"
 
 var (
-	invalidTitleError       = errors.New("invalid title")
-	invalidDescriptionError = errors.New("invalid description")
-	invalidUserNameError    = errors.New("invalid user name")
-	invalidPasswordError    = errors.New("invalid password")
-	invalidMIMEType         = errors.New("invalid mime type")
+	errInvalidTitle       = errors.New("invalid title")
+	errInvalidDescription = errors.New("invalid description")
+	errInvalidUserName    = errors.New("invalid user name")
+	errInvalidPassword    = errors.New("invalid password")
 )

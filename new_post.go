@@ -37,12 +37,12 @@ func (a *apiImpl) NewPost(r *http.Request, req *NewPostReq, resp *NewPostResp) e
 		return err
 	}
 	if req.Content.Title == "" {
-		fmt.Println(invalidTitleError)
-		return invalidTitleError
+		fmt.Println(errInvalidTitle)
+		return errInvalidTitle
 	}
 	if req.Content.Description == "" {
-		fmt.Println(invalidDescriptionError)
-		return invalidDescriptionError
+		fmt.Println(errInvalidDescription)
+		return errInvalidDescription
 	}
 
 	fileName := time.Now().Format("2006-01-02") + "-" + sanitizeFileName(req.Content.Title) + ".htm"

@@ -18,7 +18,7 @@ type Blog struct {
 	URL      string `xml:"url"`
 	BlogName string `xml:"blogName"`
 	IsAdmin  bool   `xml:"isAdmin"`
-	XMLRPC   string `xml"xmlrpc"`
+	XMLRPC   string `xml:"xmlrpc"`
 }
 
 type GetUsersBlogsResp struct {
