@@ -58,7 +58,6 @@ func (a *apiImpl) NewMediaObject(r *http.Request, req *NewMediaObjectReq, resp *
 	}
 
 	resp.MediaResp = MediaResp{
-		ID:       "xxx",
 		FileName: fileName,
 		URL:      filepath.Join(getConfig().MediaRelDirForBlogHtml, fileName),
 		Type:     req.Media.Type,
