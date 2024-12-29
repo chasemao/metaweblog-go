@@ -17,6 +17,7 @@ type config struct {
 	MediaRelDirForBlogHtml string `yaml:"mediaRelDirForBlogHtml"`
 	UserName               string `yaml:"userName"`
 	Password               string `yaml:"password"`
+	HugoCompileDir         string `yaml:"hugoCompileDir"` //TODO
 }
 
 func initConfig() error {
