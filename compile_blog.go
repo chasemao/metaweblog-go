@@ -5,6 +5,7 @@ import (
 	"os/exec"
 )
 
+//lint:ignore U1000 todo part
 func (a *apiImpl) compileBlog() {
 	if getConfig().HugoCompileDir == "" {
 		return
