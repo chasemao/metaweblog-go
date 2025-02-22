@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"regexp"
 	"strings"
 	"time"
 
@@ -64,12 +63,9 @@ func (a *apiImpl) NewPost(r *http.Request, req *NewPostReq, resp *NewPostResp) e
 	return nil
 }
 
-var re = regexp.MustCompile(`[.<>:"/\\|?*]`)
-
 func sanitizeFileName(fileName string) string {
-	safeFileName := re.ReplaceAllString(fileName, "-")
-	safeFileName = strings.TrimSpace(safeFileName)
-	safeFileName = strings.ReplaceAll(safeFileName, " ", "-")
+	fileName = strings.TrimSpace(fileName)
+	fileName = strings.ReplaceAll(fileName, " ", "-")
 
-	return safeFileName
+	return fileName
 }

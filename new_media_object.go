@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
@@ -42,7 +43,7 @@ func (a *apiImpl) NewMediaObject(r *http.Request, req *NewMediaObjectReq, resp *
 		return err
 	}
 
-	fileName := fmt.Sprintf("%d", time.Now().UnixMilli()) + "-" + req.Media.Name
+	fileName := fmt.Sprintf("%d", time.Now().UnixMilli()) + "-" + strings.ToLower(req.Media.Name)
 	fp := filepath.Join(getConfig().MediaDir, fileName)
 	file, err := os.Create(fp)
 	if err != nil {
